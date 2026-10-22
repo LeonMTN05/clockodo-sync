@@ -4,6 +4,9 @@
 #  Clockodo-Arbeitszeiten (Kommen/Gehen/Pausen) -> Excel (1 Blatt pro Monat)
 #  -> Nextcloud, als Cronjob. Für Debian/Ubuntu (VM, LXC, Docker).
 #
+#  Inoffizielles Projekt – nicht verbunden mit der Clockodo GmbH. "Clockodo" ist
+#  eine Marke ihres Inhabers. Bereitstellung ohne Gewährleistung, siehe README.
+#
 #  Aufruf:  sudo bash clockodo-sync-installer.sh            (Menü / Ersteinrichtung)
 #           sudo bash clockodo-sync-installer.sh --install  (Einrichtungsassistent)
 #           sudo bash clockodo-sync-installer.sh --update   (nur Programm aktualisieren)
@@ -443,6 +446,7 @@ do_install() {
   echo "System: $OS_NAME · Umgebung: $ENV_TYPE · Host: $(hostname)"
   echo "Was passiert: Pakete installieren, Benutzer '$SVC_USER' anlegen, Zugänge abfragen,"
   echo "alle bisherigen Zeiten importieren und einen Cronjob einrichten."
+  echo "${Y}Hinweis:${N} Inoffizielles Tool, nicht verbunden mit der Clockodo GmbH. Nutzung auf eigene Gefahr."
   ask_yn go "Starten?" j; [ "$go" = yes ] || exit 0
   install_packages
   create_user_dirs
@@ -587,7 +591,7 @@ case "${1:-}" in
   --update)    do_update ;;
   --uninstall) do_uninstall ;;
   --status)    run_app status ;;
-  -h|--help)   sed -n '2,13p' "$SELF" | sed 's/^# \{0,1\}//' ;;
+  -h|--help)   sed -n '2,14p' "$SELF" | sed 's/^# \{0,1\}//' ;;
   "")          need_root; if is_installed; then menu; else do_install; fi ;;
   *)           err "Unbekannte Option: $1 (--help)"; exit 1 ;;
 esac
@@ -599,6 +603,9 @@ __PYTHON_PAYLOAD_BELOW__
 """
 clockodo-sync – liest deine Arbeitszeiten (Kommen, Gehen, Pausen) aus Clockodo,
 pflegt sie in eine Excel-Datei (ein Blatt pro Monat) und lädt sie auf Nextcloud hoch.
+
+Inoffizielles Projekt – nicht verbunden mit der Clockodo GmbH. "Clockodo" ist eine Marke
+ihres Inhabers. Bereitstellung "wie besehen" ohne Gewährleistung, siehe README.
 
 Befehle:
   clockodo-sync run            Normaler Lauf (Cronjob): heute + Rückblick-Tage

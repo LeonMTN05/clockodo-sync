@@ -1,5 +1,8 @@
 # clockodo-sync
 
+> **Inoffizielles Community-Projekt.** Nicht verbunden mit der Clockodo GmbH und nicht von ihr unterstützt
+> oder geprüft. Nutzung auf eigene Gefahr – siehe [Haftungsausschluss](#haftungsausschluss--disclaimer).
+
 Liest deine Arbeitszeiten aus Clockodo (Kommen, Gehen, Pausen), schreibt sie in eine Excel-Datei
 (ein Blatt pro Monat, z. B. `2026-10`) und lädt sie auf deine Nextcloud. Läuft als Cronjob auf
 jeder Debian/Ubuntu-VM oder jedem Container (LXC, Docker).
@@ -119,3 +122,33 @@ und kommt per E-Mail. Ist die Datei in Nextcloud gerade geöffnet (gesperrt), kl
 - `setup.sh`: Setup/Menü
 - `./build.sh` erzeugt daraus `dist/clockodo-sync-installer.sh` (Setup mit eingebettetem Programm)
 - `beispiel/Clockodo-Zeiten-Beispiel.xlsx`: Beispielausgabe mit Testdaten
+
+## Haftungsausschluss / Disclaimer
+
+**Deutsch**
+
+- Dies ist ein **privates, inoffizielles Projekt**. Es steht in **keiner Verbindung** zur Clockodo GmbH
+  (Unna) und wird von ihr weder entwickelt, unterstützt, geprüft noch empfohlen.
+- **„Clockodo“** ist eine Marke bzw. ein Produkt der Clockodo GmbH. **„Nextcloud“** ist eine Marke der
+  Nextcloud GmbH, **„Excel“** eine Marke der Microsoft Corporation. Alle genannten Marken gehören ihren
+  jeweiligen Inhabern und werden hier nur zur Beschreibung der Kompatibilität verwendet.
+- Das Script nutzt ausschließlich die **öffentlich dokumentierte Clockodo-API** mit deinem eigenen,
+  persönlichen API-Schlüssel. Es greift nur auf Daten zu, die du in Clockodo ohnehin selbst sehen darfst.
+- Die Software wird **„wie besehen“ ohne jede Gewährleistung** bereitgestellt. Es gibt keine Garantie
+  für Richtigkeit, Vollständigkeit oder Verfügbarkeit. Maßgeblich sind immer die Daten in Clockodo
+  selbst. Die Excel-Datei ist eine private Kopie und **kein offizieller Arbeitszeitnachweis**.
+- Die Erkennung von Änderungen durch Vorgesetzte/HR beruht auf einer **Ableitung** aus deiner
+  Bearbeitungssperre, da Clockodo den Bearbeiter nicht über die API liefert. Sie kann falsch liegen
+  und ist **kein Beweis** dafür, wer eine Zeit geändert hat.
+- Arbeitszeitdaten sind personenbezogene Daten. Du bist selbst dafür verantwortlich, dass die Nutzung
+  (API-Zugriff, Speicherung auf Server/Nextcloud) mit den Regeln deines Arbeitgebers, ggf. einer
+  Betriebsvereinbarung und dem Datenschutz vereinbar ist. Bewahre API-Schlüssel und Passwörter sicher auf.
+- Eine Haftung für Schäden aus der Nutzung ist ausgeschlossen, soweit gesetzlich zulässig.
+  Das ist keine Rechtsberatung.
+
+**English**
+
+This is an unofficial, private project and is **not affiliated with, endorsed, or supported by
+Clockodo GmbH**. "Clockodo", "Nextcloud" and "Excel" are trademarks of their respective owners and are
+used for descriptive purposes only. The software only uses the publicly documented Clockodo API with
+your own API key and is provided **"as is", without warranty of any kind**. Use at your own risk.

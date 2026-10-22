@@ -4,6 +4,9 @@
 clockodo-sync – liest deine Arbeitszeiten (Kommen, Gehen, Pausen) aus Clockodo,
 pflegt sie in eine Excel-Datei (ein Blatt pro Monat) und lädt sie auf Nextcloud hoch.
 
+Inoffizielles Projekt – nicht verbunden mit der Clockodo GmbH. "Clockodo" ist eine Marke
+ihres Inhabers. Bereitstellung "wie besehen" ohne Gewährleistung, siehe README.
+
 Befehle:
   clockodo-sync run            Normaler Lauf (Cronjob): heute + Rückblick-Tage
   clockodo-sync run --full     Kompletter Abgleich aller Daten seit Startdatum
